@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm run clean && babel src -d target --watch",
-    "compile":"npm run clean && babel src -d target",
-    "clean":"rm -Rf target"
+    "compile": "npm run clean && babel src -d target",
+    "clean": "rm -Rf target"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "babel-preset-stage-0": "^6.5.0"
   },
   "dependencies": {
+    "mongoose": "^4.4.20",
     "project-core": "^0.1.3"
   }
 }
