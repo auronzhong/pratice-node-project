@@ -1,0 +1,19 @@
+{
+  "name": "pratice-node-project",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auronzhong/pratice-node-project.git"
+  },
+  "author": "auronzhong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/auronzhong/pratice-node-project/issues"
+  },
+  "homepage": "https://github.com/auronzhong/pratice-node-project#readme"
+}
