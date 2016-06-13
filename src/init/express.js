@@ -48,6 +48,11 @@ import session from 'express-session';
    app.use(router);
    app.use('/static', serveStatic(path.resolve(__dirname, '../../static')));
 
+   app.use('/api', function(err, req, res, next) {
+     debug('API error: %s', err && err.stack || err);
+     res.json({error: err.toString()});
+   });
+
    app.listen($.config.get('web.port'), (err) => {
      done(err);
    });
