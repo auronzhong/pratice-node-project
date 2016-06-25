@@ -30,7 +30,7 @@ $.init.add((done) => {
     try{
 
       $.config.load(path.resolve(__dirname, '../config', env + '.js'));
-      
+
     }catch(err) {
       console.error(err);
     }
@@ -41,6 +41,8 @@ $.init.add((done) => {
 
 //初始化MongoDB
 $.init.load(path.resolve(__dirname, 'init', 'mongodb.js'));
+// 初始化中间件
+$.init.load(path.resolve(__dirname, 'middlewares'));
 //加载models
 $.init.load(path.resolve(__dirname, 'models'));
 

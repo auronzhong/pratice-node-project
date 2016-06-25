@@ -22,7 +22,7 @@
 // }, console.log);
 
 
-$.method('user.update').call({
-  name: 'hello2',
-  nickname: '我是测试1',
-}, console.log);
+// $.method('user.update').call({
+//   name: 'hello2',
+//   nickname: '我是测试1',
+// }, console.log);
