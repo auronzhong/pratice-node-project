@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/target/routes/test-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/routes/login-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/middlewares/user-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/models/Topic-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/methods/topic-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/init/mongodb-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/models/User-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/methods/user-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/config-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/routes/topic-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/server-compiled.js" />
+        <item url="file://$PROJECT_DIR$/target/init/express-compiled.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/target/routes/login-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/methods/topic-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/models/User-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/config-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/routes/test-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/middlewares/user-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/models/Topic-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/init/mongodb-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/methods/user-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/routes/topic-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/server-compiled.js" />
+      <root url="file://$PROJECT_DIR$/target/init/express-compiled.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
