@@ -52,6 +52,6 @@ export function loginUser() {
 }
 
 export function logout() {
-    console.log('logout')
+    console.log('logout');
     return request('post', 'logout');
 }

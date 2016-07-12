@@ -16,6 +16,7 @@ module.exports = function (done) {
 
     $.router.post('/api/login', async function (req, res, next) {
 
+
         if (!req.body.password) return next(new Error('missing password'));
 
         const user = await $.method('user.get').call(req.body);
