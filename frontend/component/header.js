@@ -1,6 +1,3 @@
-/**
- * Created by zhongwei on 16/7/5.
- */
 import React from 'react';
 import {Link} from 'react-router';
 import {loginUser, logout} from '../lib/client';
@@ -29,8 +26,7 @@ export default class Header extends React.Component {
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                             <span className="sr-only">Toggle navigation</span>
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
@@ -43,7 +39,7 @@ export default class Header extends React.Component {
                             <li className="active">
                                 <Link to="/">首页</Link>
                             </li>
-                            <li><a href="#">帮助</a></li>
+                            <li><a href="/new"><i className="glyphicon glyphicon-plus"></i> 发帖</a></li>
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
                             {this.state.user ? (

@@ -1,9 +1,7 @@
-/**
- * Created by zhongwei on 16/7/7.
- */
 import React from 'react';
 import jQuery from 'jquery';
 import {login} from '../lib/client';
+import {redirectURL} from '../lib/utils';
 
 export default class Login extends React.Component {
 
@@ -23,7 +21,7 @@ export default class Login extends React.Component {
             .then(ret => {
                 $btn.button('reset');
                 alert('登录成功！');
-                location.replace('/');
+                redirectURL('/');
             })
             .catch(err => {
                 $btn.button('reset');
@@ -40,16 +38,13 @@ export default class Login extends React.Component {
                         <form>
                             <div className="form-group">
                                 <label htmlFor="ipt-name">用户名</label>
-                                <input type="text" className="form-control" id="ipt-name"
-                                       onChange={this.handleChange.bind(this, 'name')} placeholder=""/>
+                                <input type="text" className="form-control" id="ipt-name" onChange={this.handleChange.bind(this, 'name')} placeholder="" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="password">密码</label>
-                                <input type="password" className="form-control" id="password"
-                                       onChange={this.handleChange.bind(this, 'password')} placeholder=""/>
+                                <input type="password" className="form-control" id="password" onChange={this.handleChange.bind(this, 'password')} placeholder="" />
                             </div>
-                            <button type="button" className="btn btn-primary" onClick={this.handleLogin.bind(this)}>登录
-                            </button>
+                            <button type="button" className="btn btn-primary" onClick={this.handleLogin.bind(this)}>登录</button>
                         </form>
                     </div>
                 </div>

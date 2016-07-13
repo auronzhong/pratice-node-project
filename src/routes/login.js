@@ -16,16 +16,15 @@ module.exports = function (done) {
 
     $.router.post('/api/login', async function (req, res, next) {
 
-
         if (!req.body.password) return next(new Error('missing password'));
 
         const user = await $.method('user.get').call(req.body);
         if (!user) return next(new Error('user does not exists'));
 
-        // if (!$.utils.validatePassword(req.body.password, user.password)) {
-        //     return next(new Error('incorrect password'));
-        // }
-        // console.log(user);
+        if (!$.utils.validatePassword(req.body.password, user.password)) {
+            return next(new Error('incorrect password'));
+        }
+
         req.session.user = user;
         req.session.logout_token = $.utils.randomString(20);
 
@@ -39,6 +38,16 @@ module.exports = function (done) {
         if (req.session.logout_token && req.query.token !== req.session.logout_token) {
             return next(new Error('invalid token'));
         }
+
+        delete req.session.user;
+        delete req.session.logout_token;
+
+        res.apiSuccess({});
+
+    });
+
+
+    $.router.post('/api/logout', async function (req, res, next) {
 
         delete req.session.user;
         delete req.session.logout_token;
