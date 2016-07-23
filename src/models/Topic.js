@@ -10,27 +10,27 @@ import mongoose from 'mongoose';
 
 module.exports = function (done) {
 
-  const Schema = mongoose.Schema;
-  const ObjectId = Schema.ObjectId;
+    const Schema = mongoose.Schema;
+    const ObjectId = Schema.ObjectId;
 
-  const Topic = new Schema({
-    authorId: {type: ObjectId, index: true},
-    title: {type: String, trim: true},
-    content: {type: String},
-    tags: [{type: String, index: true}],
-    createdAt: {type: Date, index: true},
-    updatedAt: {type: Date, index: true},
-    lastCommentedAt: {type: Date, index: true},
-    comments: [{
-      authorId: ObjectId,
-      content: String,
-      createdAt: Date,
-    }],
-  });
+    const Topic = new Schema({
+        author: {type: ObjectId, index: true, ref: 'User'},
+        title: {type: String, trim: true},
+        content: {type: String},
+        tags: [{type: String, index: true}],
+        createdAt: {type: Date, index: true},
+        updatedAt: {type: Date, index: true},
+        lastCommentedAt: {type: Date, index: true},
+        comments: [{
+            author: {type: ObjectId, ref: 'User'},
+            content: String,
+            createdAt: Date,
+        }],
+    });
 
-  $.mongodb.model('Topic', Topic);
-  $.model.Topic = $.mongodb.model('Topic');
+    $.mongodb.model('Topic', Topic);
+    $.model.Topic = $.mongodb.model('Topic');
 
-  done();
+    done();
 
 };

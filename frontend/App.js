@@ -1,6 +1,3 @@
-/**
- * Created by zhongwei on 16/7/4.
- */
 import React from 'react';
 import Header from './component/Header';
 import Footer from './component/Footer';
@@ -11,7 +8,7 @@ export default class App extends React.Component {
         return (
             <div className="container">
                 <Header />
-                {this.props.children ? this.props.children : <TopicList />}
+                {this.props.children ? this.props.children : <TopicList {...this.props} />}
                 <Footer />
             </div>
         )
