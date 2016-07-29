@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * pracice Node.js project
+ * pratice Node.js project
  *
- *@author auronzhong <auronzhong@gmail.com>
+ * @author Zongmin Lei <leizongmin@gmail.com>
  */
 
 import mongoose from 'mongoose';
@@ -19,6 +19,7 @@ module.exports = function (done) {
         password: {type: String},
         nickname: {type: String},
         about: {type: String},
+        isAdmin: {type: Boolean},
     });
 
     $.mongodb.model('User', User);
