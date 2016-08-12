@@ -26,10 +26,24 @@ export default class Profile extends React.Component {
     handleSave(e) {
         const $btn = jQuery(e.target);
         $btn.button('loading');
-        updateProfile(this.state.email, this.state.nickname, this.state.about)
+        updateProfile(this.state.email, this.state.nickname, this.state.about, this.state.githubUsername)
             .then(ret => {
                 $btn.button('reset');
                 alert('修改成功！');
+            })
+            .catch(err => {
+                $btn.button('reset');
+                alert(err);
+            });
+    }
+
+    handleRemoveGithub(e) {
+        const $btn = jQuery(e.target);
+        $btn.button('loading');
+        updateProfile(this.state.email, this.state.nickname, this.state.about, '')
+            .then(ret => {
+                $btn.button('reset');
+                alert('解除绑定成功！');
             })
             .catch(err => {
                 $btn.button('reset');
@@ -62,12 +76,21 @@ export default class Profile extends React.Component {
                                        value={this.state.nickname}/>
                             </div>
                             <div className="form-group">
+                                <label htmlFor="ipt-githubUsername">Github账号</label>
+                                <input type="text" className="form-control" id="ipt-githubUsername"
+                                       onChange={this.handleChange.bind(this, 'githubUsername')} placeholder=""
+                                       value={this.state.githubUsername}/>
+                            </div>
+                            <div className="form-group">
                                 <label htmlFor="ipt-about">个人介绍</label>
                                 <textarea className="form-control" id="ipt-about"
                                           onChange={this.handleChange.bind(this, 'about')}
                                           placeholder="">{this.state.about}</textarea>
                             </div>
                             <button type="button" className="btn btn-primary" onClick={this.handleSave.bind(this)}>保存
+                            </button>
+                            <button type="button" className="btn btn-primary"
+                                    onClick={this.handleRemoveGithub.bind(this)}>解除GitHub绑定
                             </button>
                         </form>
                     </div>

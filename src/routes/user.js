@@ -17,6 +17,7 @@ module.exports = function (done) {
         if ('email' in req.body) update.email = req.body.email;
         if ('nickname' in req.body) update.nickname = req.body.nickname;
         if ('about' in req.body) update.about = req.body.about;
+        if ('githubUsername' in req.body) update.githubUsername = req.body.githubUsername;
 
         const ret = await $.method('user.update').call(update);
 
@@ -24,6 +25,7 @@ module.exports = function (done) {
         req.session.user.email = user.email;
         req.session.user.nickname = user.nickname;
         req.session.user.about = user.about;
+        req.session.user.about = user.githubUsername;
 
         res.apiSuccess(user);
 
