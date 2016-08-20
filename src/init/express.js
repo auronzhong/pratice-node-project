@@ -17,13 +17,14 @@ const redis = require("redis");
 const RedisStore = _RedisStore(session);
 
 
-
 module.exports = function (done) {
 
     const debug = $.createDebug('init:express');
     debug('initing Express...');
 
     const app = express();
+    $.express = app;
+
     const redisClient = redis.createClient($.config.get('web.session.redis'));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: false}));
@@ -65,8 +66,13 @@ module.exports = function (done) {
         res.json({error: err.toString()});
     });
 
-    app.listen($.config.get('web.port'), (err) => {
-        done(err);
-    });
+    if ($.config.get('web.port')) {
+        app.listen($.config.get('web.port'), (err) => {
+            done(err);
+        });
+    } else {
+        done();
+    }
+
 
 };
