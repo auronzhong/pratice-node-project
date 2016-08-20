@@ -46,4 +46,29 @@ describe('topic', function () {
 
     });
 
+    it(`create comment`,async function(){
+        const request = session();
+        {
+            const ret = await request.post('/api/login', {
+                name: 'test0',
+                password: '12345678',
+            });
+            console.log(ret);
+            expect(ret.token).to.be.a('string');
+        }
+        //test comment add
+        {
+            const ret = await request.post('/api/topic/item/57b84ceb32df9c2e5e6808dc/comment/add', {
+                content: 'comment test',
+            });
+            console.log(ret);
+
+            expect(ret.comment.ok).to.equal(1);
+
+
+        }
+
+    });
+
+
 });
